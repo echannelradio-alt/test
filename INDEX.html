@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Hai kamu</title>
+<style>
+    body {
+        background: linear-gradient(135deg, #ffd6e7, #ffeccf);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        display: inline-block;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #ff7aa2;
+        color: white;
+    }
+
+    #message {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #444;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Hai kamu 👋</h2>
+    <p>Aku bikin ini cuma mau bilang sesuatu…</p>
+    <button onclick="showMessage()">Klik di sini</button>
+    <div id="message">
+        seru deh ngomong sama kamu hhe
+    </div>
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("message").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
