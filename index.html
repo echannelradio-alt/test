@@ -17,6 +17,11 @@ h2 {
     font-size: 6vw;
 }
 
+#buttons {
+    position: relative;
+    height: 160px;
+}
+
 button {
     padding: 18px 28px;
     font-size: 5vw;
@@ -35,8 +40,9 @@ button {
     background: #ff4d4d;
     color: white;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
-
 }
 
 .hidden {
@@ -58,5 +64,37 @@ button {
 <h2>Yey terima kasih 😆</h2>
 
 <a href="https://wa.me/6285810588776?text=aku%20udh%20maafin%20aku%20juga%20minta%20maaf%20ya">
-<button>Sama-sama<
+<button>Sama-sama</button>
+</a>
 
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const next = document.getElementById("next");
+const buttons = document.getElementById("buttons");
+
+// tombol kabur tetap di dalam area tombol
+function moveButton() {
+    const area = buttons.getBoundingClientRect();
+
+    const x = Math.random() * (area.width - 140);
+    const y = Math.random() * (area.height - 60);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
+
+// klik dimaafin
+yesBtn.onclick = () => {
+    buttons.classList.add("hidden");
+    next.classList.remove("hidden");
+};
+</script>
+
+</body>
+</html>
