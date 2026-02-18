@@ -76,15 +76,17 @@ yesBtn.onclick = () => {
 };
 
 function goWA() {
-    const msg = encodeURIComponent(
-        "aku udh maafin, aku juga minta maaf ya klo punya salah"
+    window.open(
+        "https://wa.me/6285810588776?text=aku%20udh%20maafin%20aku%20juga%20minta%20maaf%20ya",
+        "_blank"
     );
-    window.location.href =
-        "https://api.whatsapp.com/send?phone=6285810588776&text=" + msg;
+}
+
 }
 </script>
 
 </body>
 </html>
+
 
 
