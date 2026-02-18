@@ -40,9 +40,7 @@ button {
 
 <body>
 
-<h2 id="text">
-Maafin aku ya kalau punya salah 🙏
-</h2>
+<h2>Maafin aku ya kalau punya salah 🙏</h2>
 
 <div id="buttons">
 <button id="yes">Dimaafin ❤️</button>
@@ -51,7 +49,7 @@ Maafin aku ya kalau punya salah 🙏
 
 <div id="next" class="hidden">
 <h2>Yey terima kasih 😆</h2>
-<button onclick="goWA()">Sama-sama</button>
+<button id="waBtn">Sama-sama</button>
 </div>
 
 <script>
@@ -59,33 +57,31 @@ const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const next = document.getElementById("next");
 const buttons = document.getElementById("buttons");
+const waBtn = document.getElementById("waBtn");
 
-noBtn.addEventListener("mouseover", moveButton);
-noBtn.addEventListener("click", moveButton);
-
+// tombol kabur
 function moveButton() {
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 100);
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 }
 
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
+
+// klik dimaafin
 yesBtn.onclick = () => {
     buttons.classList.add("hidden");
     next.classList.remove("hidden");
 };
 
-function goWA() {
-    const url = "https://wa.me/6285810588776?text=aku%20udh%20maafin%20aku%20juga%20minta%20maaf%20ya";
-    window.open(url, "_blank");
-}
-
-}
+// buka WhatsApp (redirect langsung)
+waBtn.onclick = () => {
+    location.href =
+    "https://wa.me/6285810588776?text=aku%20udh%20maafin%20aku%20juga%20minta%20maaf%20ya";
+};
 </script>
 
 </body>
 </html>
-
-
-
-
